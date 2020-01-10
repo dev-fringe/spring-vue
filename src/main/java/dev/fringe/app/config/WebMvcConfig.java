@@ -3,6 +3,8 @@ package dev.fringe.app.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -14,7 +16,8 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @ComponentScan(basePackages = { "dev.fringe.app.controller" })
 @EnableWebMvc
-//@ImportResource("classpath:spring.xml")
+@EnableScheduling
+@ImportResource("classpath:/spring.xml")
 public class WebMvcConfig implements WebMvcConfigurer {
 
 	@Override
