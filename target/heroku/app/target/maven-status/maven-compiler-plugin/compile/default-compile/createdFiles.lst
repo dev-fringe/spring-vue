@@ -1,4 +1,10 @@
-dev\fringe\app\config\WebApplicationInit.class
-dev\fringe\app\config\WebMvcConfig.class
+dev\fringe\app\repository\DessertsRepository.class
 dev\fringe\app\controller\HomeController.class
+dev\fringe\app\domain\Sample.class
+dev\fringe\app\config\WebApplicationInit.class
+dev\fringe\app\service\DessertsService.class
+dev\fringe\app\config\WebMvcConfig.class
+dev\fringe\app\domain\Desserts.class
+dev\fringe\app\repository\SampleRepository.class
+dev\fringe\app\service\SampleService.class
 dev\fringe\app\Application.class
