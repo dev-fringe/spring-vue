@@ -5,7 +5,7 @@
         <h1 class="display-2 font-weight-bold mb-3">Welcome</h1>
       </v-flex>
       <v-flex xs12>
-        <v-data-table :headers="headers" :items="desserts" sort-by="calories" class="elevation-1">
+        <v-data-table :headers="headers" :items="desserts" sort-by="calories" dark>
           <template v-slot:top>
             <v-toolbar flat color="dark">
               <v-toolbar-title>CRUD</v-toolbar-title>
@@ -227,6 +227,7 @@
         } else {
           this.desserts.push(this.editedItem)
         }
+        this.$http.post('/save2', this.editedItem)        
         this.close()
       },
     },

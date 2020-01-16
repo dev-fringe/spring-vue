@@ -6,15 +6,15 @@
       clipped
     >
       <v-list dense>
-        <v-list-item link>
+        <v-list-item link to="/">
           <v-list-item-action>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Dashboard</v-list-item-title>
+            <v-list-item-title>Dashboard1</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item link to="/list">
           <v-list-item-action>
             <v-icon>mdi-settings</v-icon>
           </v-list-item-action>
@@ -30,40 +30,13 @@
       clipped-left
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
-
     <v-content>
       <v-container
         class="fill-height"
         fluid
       >
-       <HelloWorld />
-        <!-- <v-row
-          align="center"
-          justify="center"
-        >
-        
-          <v-col class="shrink">
-            <v-tooltip right>
-              <HelloWorld />
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/bXNzZL"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-col>
-        </v-row> -->
+        <router-view class="main-content"></router-view>
       </v-container>
     </v-content>
 
@@ -74,15 +47,13 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
   name: 'App',
     props: {
       source: String,
     },
   components: {
-    HelloWorld,
+//    HelloWorld,
   },
   created () {
       this.$vuetify.theme.dark = true

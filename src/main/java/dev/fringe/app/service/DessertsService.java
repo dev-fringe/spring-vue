@@ -28,4 +28,8 @@ public class DessertsService {
 	public Object get() {
 		return dessertsRepository.findAll();
 	}
+
+	public void save(Desserts desserts) {
+		dessertsRepository.save(desserts);
+	}
 }

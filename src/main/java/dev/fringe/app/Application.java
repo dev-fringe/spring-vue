@@ -36,9 +36,6 @@ public class Application {
 			System.setProperty("spring.profiles.active", "DEV");
 		}
 		new AnnotationConfigApplicationContext(Application.class).getBean(Application.class).run(args);
-		if (System.getProperty("spring.profiles.active").equals("LOC")) {
-			Runtime.getRuntime().exec("cmd /c start cmd.exe /K  npm run serve "); 
-		}
 	}
 	
 	public void run(String[] args) throws IOException {
@@ -49,7 +46,7 @@ public class Application {
 	public Undertow server() throws ServletException {
 		Set set = Collections.singleton(WebApplicationInit.class);
 		ServletContainerInitializerInfo servletContainerInitializerInfo = new ServletContainerInitializerInfo(SpringServletContainerInitializer.class, set);
-		DeploymentInfo servletBuilder = Servlets.deployment().setClassLoader(Application.class.getClassLoader()).setContextPath("/").setDeploymentName("dev-fringe.war").addServletContainerInitializer(servletContainerInitializerInfo);
+		DeploymentInfo servletBuilder = Servlets.deployment().setClassLoader(Application.class.getClassLoader()).setContextPath("/").setDeploymentName("dev-fringe.war").addWelcomePages("index.html","/").addServletContainerInitializer(servletContainerInitializerInfo);
 		DeploymentManager manager = Servlets.defaultContainer().addDeployment(servletBuilder);
 		manager.deploy();
 		PathHandler path = Handlers.path(Handlers.redirect("/")).addPrefixPath("/", manager.start());

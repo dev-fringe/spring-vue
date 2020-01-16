@@ -1,1 +1,1 @@
-web: java -cp target/classes;target/dependency/* dev.fringe.app.Application
+web: java -cp target/classes:target/dependency/* dev.fringe.app.Application
