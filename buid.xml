@@ -1,10 +1,10 @@
 <project name="front" default="dist" basedir=".">
 	<target name="dist" description="generate the distribution">
 		<echo>current directory: ${basedir}</echo>
-		<exec executable="cmd">
+	<!--	<exec executable="cmd">
 			<arg value="/c" />
 			<arg value="npm run dev" />
-		</exec> 
+		</exec> --> 
         <copy todir="${basedir}/target/classes/">
            	<fileset dir="${basedir}/dist"/>
         </copy>		

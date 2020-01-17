@@ -47,12 +47,11 @@ public class HomeController {
 	
 	@Scheduled(fixedRateString = "60000", initialDelay = 30000) 
 	private void scheduleTest() {
-		String data  = "";
 	    String webPort = System.getenv("PORT");
 	    if(webPort == null || webPort.isEmpty()) {
 	        webPort = "8080";
 	    }else {
-	    	data = restTemplate.getForObject("https://dev-fringe.herokuapp.com/index.html", String.class);
+	    	String data = restTemplate.getForObject("https://dev-fringe.herokuapp.com/index.html", String.class);
 	    	System.out.println("webPort = "  + webPort + ", data = " + data);
 	    }
 	}

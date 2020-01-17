@@ -4,11 +4,11 @@ const proxy = require('http-proxy-middleware');
 
 const app = express();
 
-app.use('/', proxy({
-  target: 'http://localhost:8080/'
+app.use('/api', proxy({
+  target: 'http://localhost:8080/api'
 }));
 
-const bundler = new Bundler('src/index.html');
+const bundler = new Bundler('src/main/javascript/index.html');
 app.use(bundler.middleware());
 
 
